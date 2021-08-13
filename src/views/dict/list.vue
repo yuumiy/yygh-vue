@@ -2,6 +2,7 @@
     <div class="app-container">
         <div class="el-toolbar">
             <div class="el-toolbar-body" style="justify-content: flex-start;">
+                <!-- 实现导出按钮浏览器新标签页打开 -->
                 <a href="http://localhost:8202/admin/cmn/dict/exportData" target="_blank">
                     <el-button type="text"><i class="fa fa-plus"/> 导出</el-button>
                 </a>
@@ -83,6 +84,7 @@ export default {
     methods: {
         //导入数据字典
         importData() {
+            //打开弹框
             this.dialogImportVisible = true
         },
         //上传成功调用
@@ -97,13 +99,14 @@ export default {
             //调用导出接口
             window.location.href="http://localhost:8202/admin/cmn/dict/exportData"
         },
-        //数据字典列表
+        //数据字典列表，刷新页面
         getDictList(id) {
             dict.dictList(id)
                 .then(response => {
                     this.list = response.data
                 })
         },
+        //递归调用，层级显示的效果
         getChildrens(tree, treeNode, resolve) {
             dict.dictList(tree.id).then(response => {
                 resolve(response.data)
