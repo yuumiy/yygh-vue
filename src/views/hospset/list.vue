@@ -19,7 +19,7 @@
       <el-table
       :data="list" stripe style="width: 100%" @selection-change="handleSelectionChange">
          <el-table-column type="selection" width="55"/>
-         <el-table-column type="index" width="50" label="序号"/>
+         <el-table-column prop="id" width="50" label="序号"/>
          <el-table-column prop="hosname" label="医院名称"/>
          <el-table-column prop="hoscode" label="医院编号"/>
          <el-table-column prop="apiUrl" label="api基础路径" width="200"/>
@@ -93,7 +93,7 @@ export default {
       },
       //批量删除
       removeRows() {
-         this.$confirm('此操作将永久删除医院是设置信息, 是否继续?', '提示', {
+         this.$confirm('此操作将永久删除医院设置信息, 是否继续?', '提示', {
             confirmButtonText: '确定',
             cancelButtonText: '取消',
             type: 'warning'
@@ -134,7 +134,7 @@ export default {
       },
       //删除医院设置的方法
       removeDataById(id) {
-         this.$confirm('此操作将永久删除医院是设置信息, 是否继续?', '提示', {
+         this.$confirm('此操作将永久删除医院设置信息, 是否继续?', '提示', {
             confirmButtonText: '确定',
             cancelButtonText: '取消',
             type: 'warning'

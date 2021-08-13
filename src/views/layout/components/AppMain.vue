@@ -11,6 +11,7 @@
 export default {
   name: 'AppMain',
   computed: {
+    // 每次路由跳转都去刷新整个页面，解决前端某个bug
      key() {
        return this.$route.name !== undefined ? this.$route.name + +new Date() : this.$route + +new Date()
      }

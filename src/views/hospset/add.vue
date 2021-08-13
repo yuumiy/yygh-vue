@@ -85,7 +85,7 @@ export default {
       saveOrUpdate() {
          //判断添加还是修改
          if(!this.hospitalSet.id) { //没有id，做添加
-            this.save();
+            this.save()
          }else {//修改
             this.update()
          }
