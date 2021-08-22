@@ -68,7 +68,7 @@ export default {
             bookingRule: null //预约信息
         }
     },
-    created() {
+    created() {  //在页面渲染之前执行
         //获取路由id
         const id = this.$route.params.id
         //调用方法，根据id查询医院详情
