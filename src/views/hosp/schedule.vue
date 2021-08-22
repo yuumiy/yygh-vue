@@ -128,6 +128,7 @@ export default {
             this.getScheduleRule()
         },
 
+        //前端排班信息不显示，代表没有数据，不是代码问题
         getScheduleRule() {
             hospApi.getScheduleRule(this.page, this.limit, this.hoscode, this.depcode).then(response => {
                 this.bookingScheduleList = response.data.bookingScheduleRuleList
